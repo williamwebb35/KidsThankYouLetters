@@ -13,18 +13,30 @@
 #Run the code
 #Copy and Paste the output into a word processing application such as Word. This will allow you to increase the font size (recommended) and print hard copies.
 
-# Dictionary of gift-giver(s) and gifts
-gifts = {'Grandma Adele': ['telescope', '&', 'putty'], 'Grandma Bern and Papa': ['clothes'], 'Duffels': ['coloring books', 'markers'], 'Sara': 'sunprint kit', 'Ellen': ['calico critters', 'purse'], 'Provasi':'book', 'Carol' : ['dress', '&', 'tiara'], 'Chizuko': ['yoga bunny', '&', 'mother bruce'], 'Mike':'toolset'}
+# Dictionary of attendees and gifts. Enter the attendees and their gifts. Include '&' if desired before the last gift if the giver gave multiple gifts
+gifts = {'Grandma Adele': ['telescope', '&', 'putty'], 'Grandma Bern and Papa': ['clothes'], 'Sara': 'sunprint kit', 'Provasi':'book', 'Chizuko': ['yoga bunny', '&', 'mother bruce'], 'Mike':'toolset'}
+
+# Dictionary of non-attendees and gifts. Enter the attendees and their gifts. Include '&' if desired before the last gift if the giver gave multiple gifts
+gifts_na = {'Duffels': ['coloring books','&','markers'], 'Ellen': ['calico critters', '&', 'purse'], 'Carol' : ['dress', '&', 'tiara'],}
 
 #Change the event depending on the occasion
 event = 'my 6th birthday party'
 
-# Iterates through the dictionary and inserts guests' names and their gifts
+# Attendance
 
+
+# Prints the letter  if the gift-giver attended the event
 for guest, present in gifts.items():
     present = (' '.join(present)) #removes the brackets and quotes from the lists so they are not printed
     print("```````````````````````````````````","\n\nDear", guest, ","
-          "\n\n Thank you very much for coming to "+ event, ".\n\n Thank you very much for the", present, ". \n\n I love what you gave me for my birthday! \n\n\n Love,\n\n\n","```````````````````````````````````",)
+          "\n\n Thank you very much for coming to "+ event, ".\n\n Thank you very much for the", present, ". \n\n I love what you gave me for my birthday! \n\n\n Love,\n\n\n")
+
+
+# Prints the letter  if the gift-giver did not attend the event
+for guest, present in gifts_na.items():
+    present = (' '.join(present)) #removes the brackets and quotes from the lists so they are not printed
+    print("```````````````````````````````````","\n\nDear", guest, ","
+          "\n\n Thank you very much for the", present, ". \n\n I love what you gave me for my birthday! \n\n\n Love,\n\n\n")
 
 
 
